@@ -13,12 +13,24 @@ source ~/.bashrc
 
 brew install fzf ripgrep bat
 
+# Setup fzf config in the bashrc
 echo >> ~/.bashrc
 
-eval "$(fzf --bash)"
+echo 'eval "$(fzf --bash)"' >> ~/.bashrc
 
-# Setup fzf
-# TODO
+echo "export FZF_DEFAULT_OPTS='--preview \"bat --style=numbers --color=always --line-range :500 {}\"'" >> ~/.bashrc
+
+echo >> ~/.bashrc
+
+# Disable file preview when browsing folders
+echo "_fzf_comprun() {"                                                    >> ~/.bashrc
+echo "  local command=\$1"                                                 >> ~/.bashrc
+echo "  shift"                                                             >> ~/.bashrc
+echo "  case \"\$command\" in"                                             >> ~/.bashrc
+echo "    cd)           fzf \"\$@\" --preview 'tree -C {} | head -200' ;;" >> ~/.bashrc
+echo "    *)            fzf \"\$@\" ;;"                                    >> ~/.bashrc
+echo "  esac"                                                              >> ~/.bashrc
+echo "}"                                                                   >> ~/.bashrc
 
 # Install Neovim and Node.js
 # ##################################################################################################
