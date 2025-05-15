@@ -1,3 +1,5 @@
+sudo apt-get install -y build-essential cmake git curl
+
 # Install Homebrew
 # ##################################################################################################
 
@@ -7,6 +9,7 @@ echo >> ~/.bashrc
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
 
 source ~/.bashrc
+
 
 # Install fzf, ripgrep, bat, needed for nice experience in terminal
 # ##################################################################################################
