@@ -1,3 +1,5 @@
+sudo apt update && sudo apt -y upgrade
+
 sudo apt-get install -y build-essential cmake git curl
 
 # Install Homebrew
