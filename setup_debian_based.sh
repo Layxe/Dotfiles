@@ -38,6 +38,8 @@ echo "    *)            fzf \"\$@\" ;;"                                    >> ~/
 echo "  esac"                                                              >> ~/.bashrc
 echo "}"                                                                   >> ~/.bashrc
 
+echo "alias vim=nvim" >> ~/.bashrc
+
 # Install Neovim and Node.js
 # ##################################################################################################
 
