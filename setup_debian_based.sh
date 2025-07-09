@@ -12,6 +12,7 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
 
 source ~/.bashrc
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Install fzf, ripgrep, bat, needed for nice experience in terminal
 # ##################################################################################################
