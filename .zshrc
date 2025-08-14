@@ -65,6 +65,8 @@ alias gco='git checkout'
 alias ga='git add'
 alias gp='git push -u origin'
 
+alias jjj='vim $(fzf --preview="bat --color=always {}")'
+
 # Shell integrations
 # eval "$(fzf --)"
 eval "$(zoxide init --cmd cd zsh)"
@@ -102,3 +104,8 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 # To disable highlighting of globbing expressions
 ZSH_HIGHLIGHT_STYLES[globbing]='none'
+
+# FZF etc.
+####################################################################################################
+
+source <(fzf --zsh)

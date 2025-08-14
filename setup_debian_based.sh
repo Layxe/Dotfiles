@@ -1,6 +1,6 @@
 sudo apt update && sudo apt -y upgrade
 
-sudo apt-get install -y build-essential cmake git curl
+sudo apt-get install -y build-essential cmake git curl zsh
 
 # Install Homebrew
 # ##################################################################################################
@@ -49,3 +49,16 @@ brew install neovim node
 
 mkdir -p ~/.config
 git clone https://github.com/Layxe/nvim ~/.config/nvim
+
+# Copy zshrc
+# ##################################################################################################
+
+# Setup zsh
+rm ~/.zshrc
+curl -L https://raw.githubusercontent.com/Layxe/Dotfiles/refs/heads/main/.zshrc > ~/.zshrc
+
+# Setup oh-my-posh
+mkdir -p ~/.config/oh-my-posh/
+curl -L https://raw.githubusercontent.com/Layxe/Dotfiles/refs/heads/main/oh-my-posh/zen.toml > ~/.config/oh-my-posh/zen.toml
+
+echo "Setup finished"
