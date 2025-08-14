@@ -67,10 +67,6 @@ alias gp='git push -u origin'
 
 alias jjj='vim $(fzf --preview="bat --color=always {}")'
 
-# Shell integrations
-# eval "$(fzf --)"
-eval "$(zoxide init --cmd cd zsh)"
-
 # Add ~/bin to PATH
 export PATH=$HOME/bin:$PATH
 
@@ -109,3 +105,4 @@ ZSH_HIGHLIGHT_STYLES[globbing]='none'
 ####################################################################################################
 
 source <(fzf --zsh)
+eval "$(zoxide init zsh)"
