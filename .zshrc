@@ -105,4 +105,6 @@ ZSH_HIGHLIGHT_STYLES[globbing]='none'
 ####################################################################################################
 
 source <(fzf --zsh)
+
+unalias zi 2>/dev/null
 eval "$(zoxide init zsh)"
