@@ -2,6 +2,9 @@ version = 2
 final_space = true
 console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
+# Git Prompt
+# ##################################################################################################
+
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
@@ -18,19 +21,23 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
       commit_icon = '@'
       fetch_status = true
 
+# Right Prompt
+# ##################################################################################################
+
 [[blocks]]
   type = 'rprompt'
   overflow = 'hidden'
 
   [[blocks.segments]]
-    type = 'executiontime'
-    style = 'plain'
-    foreground = 'yellow'
-    background = 'transparent'
-    template = '{{ .FormattedMs }}'
+    type = "python"
+    style = "powerline"
+    powerline_symbol = ""
+    foreground = "#d3d3d3"
+    background = "#34548A"
+    template = "  {{ .Venv }} "
 
-    [blocks.segments.properties]
-      threshold = 5000
+# Main Prompt
+# ##################################################################################################
 
 [[blocks]]
   type = 'prompt'
@@ -55,7 +62,9 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
       "{{if eq .Code 0}}magenta{{end}}",
     ]
     background = 'transparent'
-    template = ' ❯ '
+    # template = ' ❯ '
+    # template = "{{ .Env.VI_MODE }}"
+    template = "  <p:light-sky-blue>\u26a1</>"
 
 [transient_prompt]
   foreground_templates = [
