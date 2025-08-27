@@ -45,8 +45,10 @@ echo "alias vim=nvim" >> ~/.bashrc
 
 brew install neovim node
 
-# Download neovim config
+# Install tree-sitter for latex
+npm install -g tree-sitter-cli
 
+# Download neovim config
 mkdir -p ~/.config
 git clone https://github.com/Layxe/nvim ~/.config/nvim
 
