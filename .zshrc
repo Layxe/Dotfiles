@@ -159,11 +159,10 @@ lsof -i :80       List processes using port 80
 EOF
 )
 
-
 # Redefine CTRL+R to skip the preview
 fzf-history-widget() {
   local selected
-  selected=$(fc -rl 1 | fzf --height 50% --ansi --preview="echo \"$CHEATSHEET\"") || return
+  selected=$(fc -rl 1 | sed 's/^[ ]*[0-9]\+  *//' | fzf --height 50% --ansi --preview="echo \"$CHEATSHEET\"") || return
   LBUFFER=$selected
   zle redisplay
 }
