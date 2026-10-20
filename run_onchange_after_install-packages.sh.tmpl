@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Re-runs whenever the Brewfile changes.
+# Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
+set -euo pipefail
+
+if ! command -v brew >/dev/null && [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+command -v brew >/dev/null || { echo "brew not found, skipping package install"; exit 0; }
+
+brew bundle --global
+
+# tree-sitter CLI for LaTeX in neovim
+npm list -g tree-sitter-cli >/dev/null 2>&1 || npm install -g tree-sitter-cli

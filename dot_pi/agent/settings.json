@@ -28,7 +28,6 @@
     "npm:@narumitw/pi-usage",
     "npm:pi-powerline-footer",
     "npm:@alexanderfortin/pi-deepseek-usage",
-    "../../Projects/awesome-logseq-sync-pi",
     "npm:pi-ask-user"
   ],
   "theme": "dark",

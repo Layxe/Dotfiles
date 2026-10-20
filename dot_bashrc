@@ -131,6 +131,6 @@ _fzf_comprun() {
 }
 alias vim=nvim
 [ -f "$HOME/.secrets.env" ] && source "$HOME/.secrets.env"
-exec zsh
+if [ -t 1 ] && command -v zsh >/dev/null; then exec zsh; fi
 
 . "$HOME/.local/bin/env"

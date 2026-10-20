@@ -1,0 +1,5 @@
+# Neovim config lives in its own repo; chezmoi clones/pulls it.
+[".config/nvim"]
+    type = "git-repo"
+    url = "https://github.com/Layxe/nvim.git"
+    refreshPeriod = "168h"
