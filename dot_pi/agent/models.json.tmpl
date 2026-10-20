@@ -1,7 +1,7 @@
 {
     "providers": {
         "vllm": {
-            "baseUrl": "https://harbor.iwi2.ilka.aniedermayer.de/api",
+            "baseUrl": "{{ output "sh" "-c" ". \"$HOME/.secrets.env\" && printf %s \"$VLLM_BASE_URL\"" | trim }}",
             "api": "openai-completions",
             "apiKey": "${VLLM_API_KEY}",
             "models": [
