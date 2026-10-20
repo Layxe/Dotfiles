@@ -175,3 +175,10 @@ bindkey '^R' fzf-history-widget
 
 unalias zi 2>/dev/null
 eval "$(zoxide init zsh)"
+
+. "$HOME/.local/bin/env"
+
+source $HOME/.local/bin/env
+
+# Secrets live outside the repo
+[ -f "$HOME/.secrets.env" ] && source "$HOME/.secrets.env"

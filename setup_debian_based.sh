@@ -48,19 +48,12 @@ brew install neovim node
 # Install tree-sitter for latex
 npm install -g tree-sitter-cli
 
-# Download neovim config
-mkdir -p ~/.config
-git clone https://github.com/Layxe/nvim ~/.config/nvim
 
-# Copy zshrc
+# Dotfiles (zsh, bash, nvim, oh-my-posh, zellij, alacritty, claude, pi) via chezmoi
 # ##################################################################################################
 
-# Setup zsh
-rm ~/.zshrc
-curl -L https://raw.githubusercontent.com/Layxe/Dotfiles/refs/heads/main/.zshrc > ~/.zshrc
+brew install chezmoi
+chezmoi init --apply Layxe
 
-# Setup oh-my-posh
-mkdir -p ~/.config/oh-my-posh/
-curl -L https://raw.githubusercontent.com/Layxe/Dotfiles/refs/heads/main/oh-my-posh/zen.toml > ~/.config/oh-my-posh/zen.toml
-
+echo "Create ~/.secrets.env (see README) for API keys"
 echo "Setup finished"

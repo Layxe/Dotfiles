@@ -1,0 +1,36 @@
+{
+  "lastChangelogVersion": "1.2.0",
+  "defaultProvider": "vllm",
+  "defaultModel": "Qwen3.8-27B",
+  "subagents": {
+    "agentOverrides": {
+      "context-builder": {
+        "model": ""
+      },
+      "planner": {
+        "model": ""
+      },
+      "researcher": {
+        "model": ""
+      },
+      "reviewer": {
+        "model": ""
+      },
+      "scout": {
+        "model": ""
+      },
+      "worker": {
+        "model": ""
+      }
+    }
+  },
+  "packages": [
+    "npm:@narumitw/pi-usage",
+    "npm:pi-powerline-footer",
+    "npm:@alexanderfortin/pi-deepseek-usage",
+    "../../Projects/awesome-logseq-sync-pi",
+    "npm:pi-ask-user"
+  ],
+  "theme": "dark",
+  "defaultThinkingLevel": "high"
+}
