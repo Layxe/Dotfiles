@@ -30,11 +30,11 @@ Write each task to a file in the scratchpad (not the repo), e.g. `$SCRATCH/task-
 Run it from the repo root. pi needs the API keys from `~/.secrets.env`, which non-interactive shells do not load:
 
 ```bash
-( . ~/.secrets.env && pi -p --no-session --model vllm/Qwen3.8-27B --thinking medium @"$SCRATCH/task-1.md" "Implement the task in the attached file. Follow it exactly. When done, run the acceptance commands and print a short summary of what you changed and the command results." )
+( . ~/.secrets.env && pi -p --no-session --model vllm/Qwen3.8-27B --thinking high @"$SCRATCH/task-1.md" "Implement the task in the attached file. Follow it exactly. When done, run the acceptance commands and print a short summary of what you changed and the command results." )
 ```
 
 Notes:
-- `--no-session` keeps runs independent; use `--thinking high` only for hard tasks, `low` for mechanical ones.
+- `--no-session` keeps runs independent. Always use `--thinking high`.
 - Use a generous Bash `timeout` (up to 600000 ms) or `run_in_background` for long tasks.
 - Run tasks in parallel only if they touch disjoint files; otherwise sequentially.
 - Qwen has about 150k context. Keep each task well under that.
