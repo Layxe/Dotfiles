@@ -116,7 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+[ -x /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 eval "$(fzf --bash)"
 export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}"'
@@ -133,4 +133,4 @@ alias vim=nvim
 [ -f "$HOME/.secrets.env" ] && source "$HOME/.secrets.env"
 if [ -t 1 ] && command -v zsh >/dev/null; then exec zsh; fi
 
-. "$HOME/.local/bin/env"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
